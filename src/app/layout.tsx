@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight : ['200','300','400','500','600','700','800']
+  weight: ['200', '300', '400', '500', '600', '700', '800']
 });
 
 export const metadata: Metadata = {
@@ -20,7 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolage.className} antialiased`}
+        style={{
+          backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')",
+          backgroundColor: "#fff", // optional background base
+          backgroundRepeat: "repeat",
+        }}
+        className={`${bricolage.className} antialiased min-h-screen w-full overflow-x-hidden`}
       >
         {children}
       </body>
